@@ -1,5 +1,5 @@
 import { ComponentProps } from "react";
-import styles from "./card.module.scss";
+import styles from "./index.module.scss";
 
 export default function Card(props: any) {
   return (

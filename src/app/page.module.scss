@@ -5,80 +5,56 @@
   align-items: center;
   padding: 6rem;
   min-height: 100vh;
-}
 
-.description {
-  display: inherit;
-  justify-content: inherit;
-  align-items: inherit;
-  font-size: 0.85rem;
-  max-width: var(--max-width);
-  width: 100%;
-  z-index: 2;
-  font-family: var(--font-mono);
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(25%, auto));
+    max-width: 100%;
+    width: var(--max-width);
+  }
 
-  a {
+  .center {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 0.5rem;
-  }
-
-  p {
     position: relative;
-    margin: 0;
-    padding: 1rem;
-    background-color: rgba(var(--callout-rgb), 0.5);
-    border: 1px solid rgba(var(--callout-border-rgb), 0.3);
-    border-radius: var(--border-radius);
+    padding: 4rem 0;
+
+    .logo {
+      position: relative;
+      z-index: 2;
+    }
+
+    .backDecor {
+      position: absolute;
+      z-index: 1;
+      margin-bottom: -50px;
+      color: #ff776d;
+    }
+
+    &::before {
+      background: var(--secondary-glow);
+      border-radius: 50%;
+      width: 480px;
+      height: 360px;
+      margin-left: -400px;
+    }
+
+    &::after {
+      background: var(--primary-glow);
+      width: 640px;
+      height: 280px;
+      z-index: -1;
+    }
+
+    &::before,
+    &::after {
+      left: 20%;
+      position: absolute;
+      filter: blur(45px);
+      transform: translateZ(0);
+    }
   }
-}
-
-.code {
-  font-weight: 700;
-  font-family: var(--font-mono);
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(25%, auto));
-  max-width: 100%;
-  width: var(--max-width);
-}
-
-.center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  padding: 4rem 0;
-
-  &::before {
-    background: var(--secondary-glow);
-    border-radius: 50%;
-    width: 480px;
-    height: 360px;
-    margin-left: -400px;
-  }
-
-  &::after {
-    background: var(--primary-glow);
-    width: 640px;
-    height: 280px;
-    z-index: -1;
-  }
-
-  &::before,
-  &::after {
-    left: 20%;
-    position: absolute;
-    filter: blur(45px);
-    transform: translateZ(0);
-  }
-}
-
-.logo {
-  position: relative;
 }
 
 /* Mobile */
