@@ -1,3 +1,5 @@
+@import "./globals.scss";
+
 .main {
   display: flex;
   flex-direction: column;
@@ -13,46 +15,111 @@
     width: var(--max-width);
   }
 
-  .center {
+  article {
+    width: 100%;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    padding: 4rem 0;
 
-    .logo {
+    section {
+      display: flex;
+      flex-direction: column;
+      width: 50%;
+      margin-top: 150px;
+
+      h1 {
+        font-size: 70px;
+        font-family: $titleFont;
+        text-align: right;
+        width: 100%;
+      }
+
+      h4 {
+        font-size: 30px;
+        font-family: $paragraphFont;
+        text-align: right;
+        width: 100%;
+        margin-top: 10px;
+      }
+
+      p {
+        font-size: 18px;
+        font-family: $paragraphFont;
+        text-align: right;
+        width: 100%;
+        margin-top: 40px;
+      }
+
+      .buttons {
+        display: flex;
+        align-items: center;
+        margin-top: 300px;
+
+        button {
+          font-family: $mainFont;
+          border-radius: 50px;
+          margin: auto;
+          width: 300px;
+          height: 70px;
+          transition: all 1s ease;
+
+          &:hover {
+            border-radius: 20px;
+          }
+        }
+
+        .hire {
+          background: linear-gradient(45deg, $primaryColor3, $secondaryColor1);
+          margin-left: 10px;
+          color: $lightColor;
+        }
+
+        .resume {
+          background: linear-gradient(45deg, $primaryColor3, $secondaryColor3);
+          -webkit-background-clip: text;
+          background-clip: text;
+          -webkit-text-fill-color: transparent;
+          margin-right: 10px;
+          border: 1px solid $primaryColor3;
+        }
+      }
+    }
+
+    .myImageContainer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
       position: relative;
-      z-index: 2;
-    }
+      padding: 4rem 0;
+      width: 50%;
 
-    .backDecor {
-      position: absolute;
-      z-index: 1;
-      margin-bottom: -50px;
-      color: #ff776d;
-    }
+      .contacts {
+        display: flex;
+        margin-top: 50px;
 
-    &::before {
-      background: var(--secondary-glow);
-      border-radius: 50%;
-      width: 480px;
-      height: 360px;
-      margin-left: -400px;
-    }
+        .contactIcons {
+          // color: $primaryColor3;
+          font-size: 30px;
+          margin: auto 5px;
+          z-index: 5;
+          transition: all 0.5s ease;
 
-    &::after {
-      background: var(--primary-glow);
-      width: 640px;
-      height: 280px;
-      z-index: -1;
-    }
+          &:hover {
+            margin: auto 20px;
+            cursor: pointer;
+          }
+        }
+      }
 
-    &::before,
-    &::after {
-      left: 20%;
-      position: absolute;
-      filter: blur(45px);
-      transform: translateZ(0);
+      .myImage {
+        position: relative;
+        z-index: 2;
+      }
+
+      .backDecor {
+        position: absolute;
+        z-index: 1;
+        margin-bottom: -50px;
+      }
     }
   }
 }
@@ -70,11 +137,11 @@
     text-align: center;
   }
 
-  .center {
+  .myImageContainer {
     padding: 8rem 0 6rem;
   }
 
-  .center {
+  .myImageContainer {
     &::before {
       transform: none;
       height: 300px;
@@ -125,27 +192,5 @@
       );
       z-index: 1;
     }
-  }
-}
-
-/* Tablet and Smaller Desktop */
-@media (min-width: 701px) and (max-width: 1120px) {
-  .grid {
-    grid-template-columns: repeat(2, 50%);
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  .vercelLogo {
-    filter: invert(1);
-  }
-}
-
-@keyframes rotate {
-  from {
-    transform: rotate(360deg);
-  }
-  to {
-    transform: rotate(0deg);
   }
 }

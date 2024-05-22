@@ -6,6 +6,7 @@ import { useContext, useState } from "react";
 import { Context } from "../../middleware/library/context";
 import WbSunnyIcon from "@mui/icons-material/WbSunny";
 import Brightness3Icon from "@mui/icons-material/Brightness3";
+import HomeIcon from "@mui/icons-material/Home";
 
 export default function Header(props) {
   const logo = require("../../src/assets/mainLogo.svg");
@@ -32,7 +33,14 @@ export default function Header(props) {
   return (
     <header className={styles.header}>
       <nav className={styles.navBar}>
-        <button className={styles.themeChanger} onClick={themeChangeHandler}>
+        <button
+          className={
+            styles.themeChanger +
+            " " +
+            (theme == "light" ? "bg-sky-500" : "bg-sky-900")
+          }
+          onClick={themeChangeHandler}
+        >
           <div className={styles.themeChangerToggle}>
             {delayTheme == "dark" ? (
               <Brightness3Icon
@@ -60,7 +68,7 @@ export default function Header(props) {
         </button>
         <span className={styles.nav}>
           <a
-            className={theme == "light" ? "text-blue-950" : "text-white"}
+            className={theme == "light" ? "text-sky-950" : "text-white"}
             href="/"
           >
             رزومه
@@ -75,7 +83,7 @@ export default function Header(props) {
         </span>
         <span className={styles.nav}>
           <a
-            className={theme == "light" ? "text-blue-950" : "text-white"}
+            className={theme == "light" ? "text-sky-950" : "text-white"}
             href="/"
           >
             پروژه ها
@@ -90,7 +98,7 @@ export default function Header(props) {
         </span>
         <span className={styles.nav}>
           <a
-            className={theme == "light" ? "text-blue-950" : "text-white"}
+            className={theme == "light" ? "text-sky-950" : "text-white"}
             href="/"
           >
             بلاگ
@@ -105,7 +113,7 @@ export default function Header(props) {
         </span>
         <span className={styles.nav}>
           <a
-            className={theme == "light" ? "text-blue-950" : "text-white"}
+            className={theme == "light" ? "text-sky-950" : "text-white"}
             href="/"
           >
             درباره من
@@ -120,11 +128,13 @@ export default function Header(props) {
         </span>
         <span className={styles.nav}>
           <a
-            className={theme == "light" ? "text-blue-950" : "text-white"}
+            className={theme == "light" ? "text-sky-950" : "text-white"}
             href="/"
           >
             خانه
+            <HomeIcon style={{ marginLeft: 5 }} />
           </a>
+
           <div
             className={
               styles.decoration +

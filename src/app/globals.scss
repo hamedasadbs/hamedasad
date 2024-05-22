@@ -8,10 +8,27 @@
   src: url(../assets/fonts/Vazir-Black-FD.ttf);
 }
 
-$titleFont: "iran";
-$mainFont: "vazir";
+@font-face {
+  font-family: "elham";
+  src: url(../assets/fonts/BElham.ttf);
+}
 
-$backColor: black;
+/*font*/
+$titleFont: "elham";
+$mainFont: "vazir";
+$paragraphFont: "iran";
+
+/*palette*/
+$primaryColor1: #082f49; //sky-950
+$primaryColor2: #0c4a6e; //sky-900
+$primaryColor3: #0ea5e9; //sky-500
+
+$secondaryColor1: #9f1239; //rose-800
+$secondaryColor2: #be123c; //rose-700
+$secondaryColor3: #e11d48; //rose-600
+
+$darkColor: #0f172a; //slate-900
+$lightColor: #f8fafc; //slate-50
 
 $max-width: 1100px;
 $border-radius: 12px;
