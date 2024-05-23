@@ -4,6 +4,10 @@
   display: flex;
   width: 100%;
 
+  .menu {
+    display: none;
+  }
+
   .navBar {
     margin: auto;
     margin-right: 0;
@@ -82,12 +86,12 @@
 
       a {
         list-style: none;
-        font-size: 18px;
         text-decoration: none;
         font-family: $mainFont;
         transition: all 0.2s ease-in-out;
         padding-bottom: 5px;
         border-bottom: 2px solid $secondaryColor3;
+        font-size: clamp(1rem, 1vw, 1.8rem);
       }
     }
   }
@@ -95,5 +99,22 @@
   .logoContainer {
     margin: auto;
     margin-left: 0;
+  }
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .header {
+    .menu {
+      display: initial;
+
+      .menuIcon {
+        font-size: clamp(1rem, 8vw, 3rem);
+      }
+    }
+
+    .navBar {
+      display: none;
+    }
   }
 }

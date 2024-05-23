@@ -6,6 +6,7 @@ import { useContext, useState } from "react";
 import { Context } from "../../middleware/library/context";
 import WbSunnyIcon from "@mui/icons-material/WbSunny";
 import Brightness3Icon from "@mui/icons-material/Brightness3";
+import MenuIcon from "@mui/icons-material/Menu";
 import HomeIcon from "@mui/icons-material/Home";
 
 export default function Header(props) {
@@ -131,8 +132,8 @@ export default function Header(props) {
             className={theme == "light" ? "text-sky-950" : "text-white"}
             href="/"
           >
-            خانه
             <HomeIcon style={{ marginLeft: 5 }} />
+            خانه
           </a>
 
           <div
@@ -144,6 +145,9 @@ export default function Header(props) {
           ></div>
         </span>
       </nav>
+      <button className={styles.menu}>
+        <MenuIcon className={styles.menuIcon} />
+      </button>
       <span className={styles.logoContainer}>
         <Image
           src={theme == "light" ? logo : logoDarkMode}

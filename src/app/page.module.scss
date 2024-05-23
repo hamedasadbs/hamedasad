@@ -8,16 +8,10 @@
   padding: 6rem;
   min-height: 100vh;
 
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(25%, auto));
-    max-width: 100%;
-    width: var(--max-width);
-  }
-
   article {
     width: 100%;
     display: flex;
+    margin: auto;
 
     section {
       display: flex;
@@ -25,15 +19,30 @@
       width: 50%;
       margin-top: 150px;
 
+      .contacts {
+        display: none;
+        margin-top: 10px;
+
+        .contactIcons {
+          font-size: 25px;
+          margin: auto 3px;
+          z-index: 5;
+
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
+
       h1 {
-        font-size: 70px;
+        font-size: clamp(2rem, 4vw, 5rem);
         font-family: $titleFont;
         text-align: right;
         width: 100%;
       }
 
       h4 {
-        font-size: 30px;
+        font-size: clamp(1.2rem, 1.5vw, 4rem);
         font-family: $paragraphFont;
         text-align: right;
         width: 100%;
@@ -41,7 +50,7 @@
       }
 
       p {
-        font-size: 18px;
+        font-size: clamp(0.8rem, 1.1vw, 2rem);
         font-family: $paragraphFont;
         text-align: right;
         width: 100%;
@@ -55,6 +64,7 @@
 
         button {
           font-family: $mainFont;
+          font-size: clamp(0.7rem, 1vw, 4rem);
           border-radius: 50px;
           margin: auto;
           width: 300px;
@@ -97,7 +107,6 @@
         margin-top: 50px;
 
         .contactIcons {
-          // color: $primaryColor3;
           font-size: 30px;
           margin: auto 5px;
           z-index: 5;
@@ -124,17 +133,33 @@
   }
 }
 
-/* Mobile */
-@media (max-width: 700px) {
-  .content {
-    padding: 4rem;
-  }
+/* Tablet */
+@media (max-width: 900px) {
+  .main {
+    padding: 6rem 2rem;
 
-  .grid {
-    grid-template-columns: 1fr;
-    margin-bottom: 120px;
-    max-width: 320px;
-    text-align: center;
+    article {
+      section {
+        width: 70%;
+        margin-top: 0;
+
+        .buttons {
+          margin-top: 100px;
+
+          button {
+            height: 60px;
+          }
+        }
+      }
+
+      .myImageContainer {
+        width: 30%;
+
+        .backDecor {
+          margin-top: -60px;
+        }
+      }
+    }
   }
 
   .myImageContainer {
@@ -147,50 +172,31 @@
       height: 300px;
     }
   }
+}
 
-  .description {
-    font-size: 0.8rem;
+/* Mobile */
+@media (max-width: 600px) {
+  .main {
+    padding: 4rem 2rem;
 
-    a {
-      padding: 1rem;
+    article {
+      section {
+        width: 100%;
+
+        .contacts {
+          display: flex;
+        }
+      }
+      .myImageContainer {
+        display: none !important;
+      }
     }
+  }
 
-    p,
-    div {
-      display: flex;
-      justify-content: center;
-      position: fixed;
-      width: 100%;
-    }
-
-    p {
-      align-items: center;
-      inset: 0 0 auto;
-      padding: 2rem 1rem 1.4rem;
-      border-radius: 0;
-      border: none;
-      border-bottom: 1px solid rgba(var(--callout-border-rgb), 0.25);
-      background: linear-gradient(
-        to bottom,
-        rgba(var(--background-start-rgb), 1),
-        rgba(var(--callout-rgb), 0.5)
-      );
-      background-clip: padding-box;
-      backdrop-filter: blur(24px);
-    }
-
-    div {
-      align-items: flex-end;
-      pointer-events: none;
-      inset: auto 0 0;
-      padding: 2rem;
-      height: 200px;
-      background: linear-gradient(
-        to bottom,
-        transparent 0%,
-        rgb(var(--background-end-rgb)) 40%
-      );
-      z-index: 1;
+  .myImageContainer {
+    &::before {
+      transform: none;
+      height: 300px;
     }
   }
 }

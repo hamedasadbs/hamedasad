@@ -14,6 +14,7 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 
 import { Context } from "../../middleware/library/context";
 import { useState } from "react";
+import { toast } from "react-hot-toast";
 
 export default function Home() {
   const [theme, setTheme] = useState("light");
@@ -35,6 +36,29 @@ export default function Home() {
             <h1 className={theme == "light" ? "text-sky-900" : "text-sky-500"}>
               حامد اسداللهی
             </h1>
+            <div className={styles.contacts}>
+              <InstagramIcon
+                className={
+                  styles.contactIcons +
+                  " " +
+                  (theme == "light" ? "text-sky-500" : "text-slate-50")
+                }
+              />
+              <LinkedInIcon
+                className={
+                  styles.contactIcons +
+                  " " +
+                  (theme == "light" ? "text-sky-500" : "text-slate-50")
+                }
+              />
+              <GitHubIcon
+                className={
+                  styles.contactIcons +
+                  " " +
+                  (theme == "light" ? "text-sky-500" : "text-slate-50")
+                }
+              />
+            </div>
             <h4
               className={theme == "light" ? "text-slate-900" : "text-slate-50"}
             >
@@ -49,8 +73,10 @@ export default function Home() {
               اپلیکیشن بسازم و در کمترین زمان ممکن پروژه های خودمو ارائه بدم.
             </p>
             <div className={styles.buttons}>
-              <button className={styles.hire}>
-                <BusinessCenterIcon />
+              <button
+                onClick={() => toast.error("در حال برسی")}
+                className={styles.hire}
+              >
                 استخدام
               </button>
               <button className={styles.resume}>دانلود رزومه</button>
