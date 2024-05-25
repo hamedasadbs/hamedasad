@@ -5,7 +5,7 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 6rem;
+  padding: 4rem 7rem;
   min-height: 100vh;
 
   article {
@@ -23,13 +23,15 @@
         display: none;
         margin-top: 10px;
 
-        .contactIcons {
-          font-size: 25px;
-          margin: auto 3px;
-          z-index: 5;
+        a {
+          .contactIcons {
+            font-size: 25px;
+            margin: auto 3px;
+            z-index: 5;
 
-          &:hover {
-            cursor: pointer;
+            &:hover {
+              cursor: pointer;
+            }
           }
         }
       }
@@ -77,13 +79,13 @@
         }
 
         .hire {
-          background: linear-gradient(45deg, $primaryColor3, $secondaryColor1);
+          background: linear-gradient(150deg, $primaryColor3, $secondaryColor1);
           margin-left: 10px;
           color: $lightColor;
         }
 
         .resume {
-          background: linear-gradient(45deg, $primaryColor3, $secondaryColor3);
+          background: linear-gradient(150deg, $primaryColor3, $secondaryColor3);
           -webkit-background-clip: text;
           background-clip: text;
           -webkit-text-fill-color: transparent;
@@ -100,7 +102,20 @@
       flex-direction: column;
       position: relative;
       padding: 4rem 0;
-      width: 50%;
+      width: 40%;
+      margin: auto;
+      margin-left: 0;
+
+      .myImage {
+        z-index: 2;
+        margin: auto;
+      }
+
+      .backDecor {
+        position: absolute;
+        z-index: 1;
+        margin-bottom: -50px;
+      }
 
       .contacts {
         display: flex;
@@ -118,25 +133,45 @@
           }
         }
       }
-
-      .myImage {
-        position: relative;
-        z-index: 2;
-      }
-
-      .backDecor {
-        position: absolute;
-        z-index: 1;
-        margin-bottom: -50px;
-      }
     }
+  }
+}
+
+.designLeft {
+  position: absolute;
+  top: 120px;
+
+  .shape {
+    width: 100px;
+    height: 40px;
+    margin-right: -50px;
+    transform: skew(30deg) rotate(120deg);
+    background: linear-gradient(45deg, $primaryColor3, $secondaryColor3);
+    margin-top: 70px;
+  }
+}
+
+.designBottom {
+  position: relative;
+  width: 100%;
+  bottom: 0;
+  display: flex;
+  direction: ltr;
+
+  .shape {
+    width: 100px;
+    height: 20px;
+    transform: skew(20deg);
+    background: linear-gradient(150deg, $primaryColor3, $secondaryColor3);
+    margin-right: 10px;
+    margin-left: 10px;
   }
 }
 
 /* Tablet */
 @media (max-width: 900px) {
   .main {
-    padding: 6rem 2rem;
+    padding: 3rem 2rem;
 
     article {
       section {
@@ -162,15 +197,9 @@
     }
   }
 
-  .myImageContainer {
-    padding: 8rem 0 6rem;
-  }
-
-  .myImageContainer {
-    &::before {
-      transform: none;
-      height: 300px;
-    }
+  .designLeft,
+  .designBottom {
+    display: none !important;
   }
 }
 
@@ -180,23 +209,23 @@
     padding: 4rem 2rem;
 
     article {
+      flex-direction: column;
+      margin-top: 50px;
+
       section {
         width: 100%;
 
-        .contacts {
-          display: flex;
+        .buttons {
+          .resume,
+          .hire {
+            height: 45px;
+          }
         }
       }
-      .myImageContainer {
-        display: none !important;
-      }
-    }
-  }
 
-  .myImageContainer {
-    &::before {
-      transform: none;
-      height: 300px;
+      .myImageContainer {
+        width: 100%;
+      }
     }
   }
 }

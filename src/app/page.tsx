@@ -2,19 +2,18 @@
 
 /*inner component*/
 import Image from "next/image";
+import { useState } from "react";
+import { toast } from "react-hot-toast";
 /*style*/
 import styles from "./page.module.scss";
 /*component*/
 import Header from "../../layout/header/index.jsx";
-
+/*icon*/
 import InstagramIcon from "@mui/icons-material/Instagram";
-import BusinessCenterIcon from "@mui/icons-material/BusinessCenter";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
-
+/*context*/
 import { Context } from "../../middleware/library/context";
-import { useState } from "react";
-import { toast } from "react-hot-toast";
 
 export default function Home() {
   const [theme, setTheme] = useState("light");
@@ -36,29 +35,6 @@ export default function Home() {
             <h1 className={theme == "light" ? "text-sky-900" : "text-sky-500"}>
               حامد اسداللهی
             </h1>
-            <div className={styles.contacts}>
-              <InstagramIcon
-                className={
-                  styles.contactIcons +
-                  " " +
-                  (theme == "light" ? "text-sky-500" : "text-slate-50")
-                }
-              />
-              <LinkedInIcon
-                className={
-                  styles.contactIcons +
-                  " " +
-                  (theme == "light" ? "text-sky-500" : "text-slate-50")
-                }
-              />
-              <GitHubIcon
-                className={
-                  styles.contactIcons +
-                  " " +
-                  (theme == "light" ? "text-sky-500" : "text-slate-50")
-                }
-              />
-            </div>
             <h4
               className={theme == "light" ? "text-slate-900" : "text-slate-50"}
             >
@@ -88,31 +64,37 @@ export default function Home() {
               src="/hamed.png"
               alt="Hamed Asadollahi"
               width={632}
-              height={880}
+              height={680}
               priority
             />
             <div className={styles.contacts}>
-              <InstagramIcon
-                className={
-                  styles.contactIcons +
-                  " " +
-                  (theme == "light" ? "text-sky-500" : "text-slate-50")
-                }
-              />
-              <LinkedInIcon
-                className={
-                  styles.contactIcons +
-                  " " +
-                  (theme == "light" ? "text-sky-500" : "text-slate-50")
-                }
-              />
-              <GitHubIcon
-                className={
-                  styles.contactIcons +
-                  " " +
-                  (theme == "light" ? "text-sky-500" : "text-slate-50")
-                }
-              />
+              <a target="-blank" href="https://www.instagram.com/hamedasadbs/">
+                <InstagramIcon
+                  className={
+                    styles.contactIcons +
+                    " " +
+                    (theme == "light" ? "text-sky-500" : "text-slate-50")
+                  }
+                />
+              </a>
+              <a target="-blank" href="https://linkedin.com/hamedasadbs/">
+                <LinkedInIcon
+                  className={
+                    styles.contactIcons +
+                    " " +
+                    (theme == "light" ? "text-sky-500" : "text-slate-50")
+                  }
+                />
+              </a>
+              <a target="-blank" href="https://github.com/hamedasadbs/">
+                <GitHubIcon
+                  className={
+                    styles.contactIcons +
+                    " " +
+                    (theme == "light" ? "text-sky-500" : "text-slate-50")
+                  }
+                />
+              </a>
             </div>
             <svg
               className={styles.backDecor}
@@ -128,6 +110,28 @@ export default function Home() {
           </div>
         </article>
       </main>
+      <div
+        className={
+          styles.designLeft +
+          " " +
+          (theme == "light" ? "bg-white" : "bg-slate-900")
+        }
+      >
+        <div className={styles.shape}></div>
+        <div className={styles.shape}></div>
+        <div className={styles.shape}></div>
+      </div>
+      <div
+        className={
+          styles.designBottom +
+          " " +
+          (theme == "light" ? "bg-white" : "bg-slate-900")
+        }
+      >
+        <div className={styles.shape}></div>
+        <div className={styles.shape}></div>
+        <div className={styles.shape}></div>
+      </div>
     </Context.Provider>
   );
 }

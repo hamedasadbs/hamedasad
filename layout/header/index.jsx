@@ -1,20 +1,25 @@
 "use client";
-
+/*style*/
 import styles from "./index.module.scss";
+/*inner component*/
 import Image from "next/image";
 import { useContext, useState } from "react";
+/*context*/
 import { Context } from "../../middleware/library/context";
+/*icon*/
 import WbSunnyIcon from "@mui/icons-material/WbSunny";
 import Brightness3Icon from "@mui/icons-material/Brightness3";
 import MenuIcon from "@mui/icons-material/Menu";
 import HomeIcon from "@mui/icons-material/Home";
 
-export default function Header(props) {
+export default function Header() {
+  /*variable*/
   const logo = require("../../src/assets/mainLogo.svg");
   const logoDarkMode = require("../../src/assets/mainLogo-darkMode.svg");
+  /*state*/
   const [theme, setTheme] = useContext(Context).theme;
   const [delayTheme, setDelayTheme] = useState(theme);
-
+  /*function*/
   const themeChangeHandler = () => {
     if (theme == "light") {
       document.getElementById("iLight").style.right = 20 + "px";
