@@ -1,0 +1,60 @@
+@import "./globals.scss";
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4rem 7rem;
+  min-height: 100vh;
+}
+
+.designLeft {
+  position: absolute;
+  top: 120px;
+
+  .shape {
+    width: 100px;
+    height: 40px;
+    margin-right: -50px;
+    transform: skew(30deg) rotate(120deg);
+    background: linear-gradient(45deg, $primaryColor3, $secondaryColor3);
+    margin-top: 70px;
+  }
+}
+
+.designBottom {
+  position: relative;
+  width: 100%;
+  bottom: 0;
+  display: flex;
+  direction: ltr;
+
+  .shape {
+    width: 100px;
+    height: 20px;
+    transform: skew(20deg);
+    background: linear-gradient(150deg, $primaryColor3, $secondaryColor3);
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .main {
+    padding: 3rem 2rem;
+  }
+
+  .designLeft,
+  .designBottom {
+    display: none !important;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .main {
+    padding: 4rem 2rem;
+  }
+}

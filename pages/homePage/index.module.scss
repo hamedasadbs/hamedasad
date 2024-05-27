@@ -1,0 +1,178 @@
+@import "../globals.scss";
+
+.homePage {
+  width: 100%;
+  display: flex;
+  margin: auto;
+
+  section {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin-top: 150px;
+
+    .contacts {
+      display: none;
+      margin-top: 10px;
+
+      a {
+        .contactIcons {
+          font-size: 25px;
+          margin: auto 3px;
+          z-index: 5;
+
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
+    }
+
+    h1 {
+      font-size: clamp(2rem, 4vw, 5rem);
+      font-family: $titleFont;
+      text-align: right;
+      width: 100%;
+    }
+
+    h4 {
+      font-size: clamp(1.2rem, 1.5vw, 4rem);
+      font-family: $paragraphFont;
+      text-align: right;
+      width: 100%;
+      margin-top: 10px;
+    }
+
+    p {
+      font-size: clamp(0.8rem, 1.1vw, 2rem);
+      font-family: $paragraphFont;
+      text-align: right;
+      width: 100%;
+      margin-top: 40px;
+    }
+
+    .buttons {
+      display: flex;
+      align-items: center;
+      margin-top: 300px;
+
+      button {
+        font-family: $mainFont;
+        font-size: clamp(0.7rem, 1vw, 4rem);
+        border-radius: 50px;
+        margin: auto;
+        width: 300px;
+        height: 70px;
+        transition: all 1s ease;
+
+        &:hover {
+          border-radius: 20px;
+        }
+      }
+
+      .hire {
+        background: linear-gradient(150deg, $primaryColor3, $secondaryColor1);
+        margin-left: 10px;
+        color: $lightColor;
+      }
+
+      .resume {
+        background: linear-gradient(150deg, $primaryColor3, $secondaryColor3);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-right: 10px;
+        border: 1px solid $primaryColor3;
+      }
+    }
+  }
+
+  .myImageContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    padding: 4rem 0;
+    width: 40%;
+    margin: auto;
+    margin-left: 0;
+
+    .myImage {
+      z-index: 2;
+      margin: auto;
+    }
+
+    .backDecor {
+      position: absolute;
+      z-index: 1;
+      margin-bottom: -50px;
+    }
+
+    .contacts {
+      display: flex;
+      margin-top: 50px;
+
+      .contactIcons {
+        font-size: 30px;
+        margin: auto 5px;
+        z-index: 5;
+        transition: all 0.5s ease;
+
+        &:hover {
+          margin: auto 20px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .homePage {
+    section {
+      width: 70%;
+      margin-top: 0;
+
+      .buttons {
+        margin-top: 100px;
+
+        button {
+          height: 60px;
+        }
+      }
+    }
+
+    .myImageContainer {
+      width: 30%;
+
+      .backDecor {
+        margin-top: -60px;
+      }
+    }
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .homePage {
+    flex-direction: column;
+    margin-top: 50px;
+
+    section {
+      width: 100%;
+
+      .buttons {
+        .resume,
+        .hire {
+          height: 45px;
+        }
+      }
+    }
+
+    .myImageContainer {
+      width: 100%;
+    }
+  }
+}

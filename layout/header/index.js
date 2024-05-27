@@ -14,8 +14,8 @@ import HomeIcon from "@mui/icons-material/Home";
 
 export default function Header() {
   /*variable*/
-  const logo = require("../../src/assets/mainLogo.svg");
-  const logoDarkMode = require("../../src/assets/mainLogo-darkMode.svg");
+  const logo = require("../../assets/mainLogo.svg");
+  const logoDarkMode = require("../../assets/mainLogo-darkMode.svg");
   /*state*/
   const [theme, setTheme] = useContext(Context).theme;
   const [delayTheme, setDelayTheme] = useState(theme);

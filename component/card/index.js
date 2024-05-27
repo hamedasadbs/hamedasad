@@ -1,6 +1,6 @@
 import styles from "./index.module.scss";
 
-export default function Card(props: any) {
+export default function Card(props) {
   return (
     <a
       href={props.href}
