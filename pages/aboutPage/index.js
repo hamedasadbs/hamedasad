@@ -1,18 +1,21 @@
 /*inner component*/
 import Image from "next/image";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { toast } from "react-hot-toast";
 /*style*/
 import styles from "./index.module.scss";
-/*icon*/
-import InstagramIcon from "@mui/icons-material/Instagram";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import GitHubIcon from "@mui/icons-material/GitHub";
 
 import { Context } from "../../middleware/library/context";
 
 export default function About() {
   const theme = useContext(Context).theme[0];
+
+  const myImage = require("../../public/hamed.jpg");
+  const developer1 = require("../../public/developer1.png");
+  const developer2 = require("../../public/developer2.png");
+  const developer3 = require("../../public/developer3.png");
+  const developer4 = require("../../public/developer4.png");
+
   return (
     <article className={styles.aboutPage}>
       <section>
@@ -40,53 +43,29 @@ export default function About() {
       </section>
       <div className={styles.myImageContainer}>
         <Image
-          className={styles.myImage}
-          src="/hamed.png"
-          alt="Hamed Asadollahi"
-          width={632}
-          height={680}
+          className={styles.developer1}
+          src={developer1}
+          alt="front-end developer1"
           priority
         />
-        <div className={styles.contacts}>
-          <a target="-blank" href="https://www.instagram.com/hamedasadbs/">
-            <InstagramIcon
-              className={
-                styles.contactIcons +
-                " " +
-                (theme == "light" ? "text-sky-500" : "text-slate-50")
-              }
-            />
-          </a>
-          <a target="-blank" href="https://linkedin.com/hamedasadbs/">
-            <LinkedInIcon
-              className={
-                styles.contactIcons +
-                " " +
-                (theme == "light" ? "text-sky-500" : "text-slate-50")
-              }
-            />
-          </a>
-          <a target="-blank" href="https://github.com/hamedasadbs/">
-            <GitHubIcon
-              className={
-                styles.contactIcons +
-                " " +
-                (theme == "light" ? "text-sky-500" : "text-slate-50")
-              }
-            />
-          </a>
-        </div>
-        <svg
-          className={styles.backDecor}
-          viewBox="0 0 200 200"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            fill="#be123c"
-            d="M42.8,-63.4C51.2,-61.1,50.8,-42.1,56.6,-26.7C62.3,-11.3,74.1,0.5,78.2,15.2C82.3,29.9,78.7,47.6,67.1,54.6C55.4,61.6,35.7,57.9,18.9,61.5C2.2,65,-11.6,75.6,-19,70.8C-26.5,65.9,-27.7,45.4,-33.2,32.5C-38.8,19.5,-48.7,14,-53.2,5.5C-57.8,-3,-57.1,-14.3,-52.9,-24.5C-48.8,-34.6,-41.2,-43.5,-31.8,-45.3C-22.4,-47.1,-11.2,-41.8,3,-46.5C17.2,-51.1,34.3,-65.6,42.8,-63.4Z"
-            transform="translate(100 100)"
-          />
-        </svg>
+        <Image
+          className={styles.developer2}
+          src={developer2}
+          alt="front-end developer2"
+          priority
+        />
+        <Image
+          className={styles.developer3}
+          src={developer3}
+          alt="front-end developer3"
+          priority
+        />
+        <Image
+          className={styles.developer4}
+          src={developer4}
+          alt="front-end developer4"
+          priority
+        />
       </div>
     </article>
   );

@@ -22,7 +22,7 @@ export default function Home() {
     <Context.Provider value={context}>
       <main
         className={
-          styles.main + " " + (theme == "light" ? "bg-red-100" : "bg-slate-900")
+          styles.main + " " + (theme == "light" ? "bg-white" : "bg-slate-900")
         }
       >
         <Header />

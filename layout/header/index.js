@@ -3,6 +3,8 @@
 import styles from "./index.module.scss";
 /*inner component*/
 import Image from "next/image";
+import Link from "next/link";
+import { useRouter } from "next/router";
 import { useContext, useState } from "react";
 /*context*/
 import { Context } from "../../middleware/library/context";
@@ -11,11 +13,13 @@ import WbSunnyIcon from "@mui/icons-material/WbSunny";
 import Brightness3Icon from "@mui/icons-material/Brightness3";
 import MenuIcon from "@mui/icons-material/Menu";
 import HomeIcon from "@mui/icons-material/Home";
+import InfoIcon from "@mui/icons-material/Info";
 
 export default function Header() {
   /*variable*/
   const logo = require("../../assets/mainLogo.svg");
   const logoDarkMode = require("../../assets/mainLogo-darkMode.svg");
+  const router = useRouter();
   /*state*/
   const [theme, setTheme] = useContext(Context).theme;
   const [delayTheme, setDelayTheme] = useState(theme);
@@ -73,12 +77,12 @@ export default function Header() {
           </div>
         </button>
         <span className={styles.nav}>
-          <a
+          <Link
             className={theme == "light" ? "text-sky-950" : "text-white"}
             href="/"
           >
             رزومه
-          </a>
+          </Link>
           <div
             className={
               styles.decoration +
@@ -88,12 +92,12 @@ export default function Header() {
           ></div>
         </span>
         <span className={styles.nav}>
-          <a
+          <Link
             className={theme == "light" ? "text-sky-950" : "text-white"}
             href="/"
           >
             پروژه ها
-          </a>
+          </Link>
           <div
             className={
               styles.decoration +
@@ -103,12 +107,12 @@ export default function Header() {
           ></div>
         </span>
         <span className={styles.nav}>
-          <a
+          <Link
             className={theme == "light" ? "text-sky-950" : "text-white"}
             href="/"
           >
             بلاگ
-          </a>
+          </Link>
           <div
             className={
               styles.decoration +
@@ -118,12 +122,15 @@ export default function Header() {
           ></div>
         </span>
         <span className={styles.nav}>
-          <a
+          <Link
             className={theme == "light" ? "text-sky-950" : "text-white"}
-            href="/"
+            href="/about"
           >
+            {router.pathname == "/about" && (
+              <InfoIcon style={{ marginLeft: 5 }} />
+            )}
             درباره من
-          </a>
+          </Link>
           <div
             className={
               styles.decoration +
@@ -133,13 +140,13 @@ export default function Header() {
           ></div>
         </span>
         <span className={styles.nav}>
-          <a
+          <Link
             className={theme == "light" ? "text-sky-950" : "text-white"}
             href="/"
           >
-            <HomeIcon style={{ marginLeft: 5 }} />
+            {router.pathname == "/" && <HomeIcon style={{ marginLeft: 5 }} />}
             خانه
-          </a>
+          </Link>
 
           <div
             className={
