@@ -4,35 +4,46 @@
   width: 100%;
   display: flex;
   margin: auto;
+  margin-top: 100px;
+  position: relative;
 
   section {
     display: flex;
     flex-direction: column;
     width: 50%;
-    margin-top: 150px;
+    max-width: calc(100vw - 500px);
+    margin-top: 50px;
 
-    .contacts {
-      display: none;
-      margin-top: 10px;
+    span {
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
 
-      a {
-        .contactIcons {
-          font-size: 25px;
-          margin: auto 3px;
-          z-index: 5;
+      .contacts {
+        margin: auto;
+        display: flex;
+        margin-right: 30px;
+        a {
+          .contactIcons {
+            font-size: clamp(1.8rem, 2vw, 2.3rem);
+            margin: auto 10px;
+            transition: all 0.5s ease-in-out;
+            filter: grayscale(100%);
 
-          &:hover {
-            cursor: pointer;
+            &:hover {
+              cursor: pointer;
+              filter: grayscale(0%);
+            }
           }
         }
       }
-    }
 
-    h1 {
-      font-size: clamp(2rem, 4vw, 5rem);
-      font-family: $titleFont;
-      text-align: right;
-      width: 100%;
+      h1 {
+        font-size: clamp(2rem, 4vw, 5rem);
+        font-family: $titleFont;
+        text-align: right;
+        margin: auto 0;
+      }
     }
 
     h4 {
@@ -54,7 +65,7 @@
     .buttons {
       display: flex;
       align-items: center;
-      margin-top: 300px;
+      margin-top: 100px;
 
       button {
         font-family: $mainFont;
@@ -87,26 +98,82 @@
     }
   }
 
-  .myImageContainer {
+  .icons {
+    position: absolute;
+    left: 0;
+    top: 25px;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 500px;
+    height: 500px;
+    animation: spin 5s linear infinite;
+
+    .icon {
+      position: absolute;
+      width: 40px;
+      transition: all 0.5s ease-in-out;
+    }
+
+    .nodejs {
+      transform: rotate(30deg);
+    }
+
+    .css {
+      transform: rotate(-215deg);
+    }
+
+    .html {
+      transform: rotate(215deg);
+    }
+
+    .js {
+      transform: rotate(-270deg);
+    }
+  }
+
+  @keyframes spin {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  .myImageContainer {
+    position: absolute;
+    left: 25px;
+    top: 50px;
+    display: flex;
     flex-direction: column;
-    position: relative;
-    padding: 4rem 0;
-    width: 40%;
-    margin: auto;
-    margin-left: 0;
+    width: 450px;
+    height: 450px;
+    border-radius: 100%;
+    overflow: hidden;
+    background-image: linear-gradient(
+      90deg,
+      $primaryColor3 0%,
+      $secondaryColor3 100%
+    );
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+      rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+      rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 
     .myImage {
-      z-index: 2;
       margin: auto;
+      margin-right: -10px;
     }
 
     .backDecor {
-      position: absolute;
-      z-index: 1;
-      margin-bottom: -50px;
+      margin: auto;
+      margin-bottom: 0;
+      width: 450px;
+      height: 450px;
+      border-radius: 100%;
+      background-image: linear-gradient(
+        90deg,
+        $primaryColor3 0%,
+        $secondaryColor3 100%
+      );
+      box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+        rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+        rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
     }
 
     .contacts {
@@ -129,10 +196,12 @@
 }
 
 /* Tablet */
-@media (max-width: 900px) {
+@media (max-width: 1200px) {
   .homePage {
+    flex-direction: column;
     section {
-      width: 70%;
+      width: 100%;
+      max-width: 100%;
       margin-top: 0;
 
       .buttons {
@@ -144,8 +213,16 @@
       }
     }
 
+    .icons {
+      position: static;
+      margin: auto;
+      margin-top: -470px;
+    }
+
     .myImageContainer {
-      width: 30%;
+      position: static;
+      margin: auto;
+      margin-top: 50px;
 
       .backDecor {
         margin-top: -60px;
@@ -157,12 +234,9 @@
 /* Mobile */
 @media (max-width: 600px) {
   .homePage {
-    flex-direction: column;
     margin-top: 50px;
 
     section {
-      width: 100%;
-
       .buttons {
         .resume,
         .hire {
@@ -172,7 +246,7 @@
     }
 
     .myImageContainer {
-      width: 100%;
+      margin-top: 80px;
     }
   }
 }
