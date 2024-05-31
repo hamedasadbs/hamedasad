@@ -39,17 +39,6 @@ export default function Home() {
         <div className={styles.shape}></div>
         <div className={styles.shape}></div>
       </div>
-      <div
-        className={
-          styles.designBottom +
-          " " +
-          (theme == "light" ? "bg-white" : "bg-slate-900")
-        }
-      >
-        <div className={styles.shape}></div>
-        <div className={styles.shape}></div>
-        <div className={styles.shape}></div>
-      </div>
     </Context.Provider>
   );
 }

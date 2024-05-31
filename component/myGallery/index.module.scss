@@ -1,0 +1,156 @@
+@import "../../pages/globals.scss";
+
+.myGalleryType1 {
+  width: 50%;
+  margin: auto;
+  display: flex;
+  margin-top: -20px;
+
+  .myImage {
+    margin: auto;
+    margin-top: 0;
+    width: 700px;
+    background: linear-gradient(
+      130deg,
+      $primaryColor2,
+      $darkColor,
+      $secondaryColor1
+    );
+    background-size: 200% 200%;
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    box-shadow: 0px 0px 5px #fff;
+    animation: gradientAnime 10s ease infinite;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
+
+  @keyframes gradientAnime {
+    0% {
+      background-position: 10% 0%;
+    }
+    50% {
+      background-position: 91% 100%;
+    }
+    100% {
+      background-position: 10% 0%;
+    }
+  }
+}
+
+.myGalleryType2 {
+  .icons {
+    position: absolute;
+    left: 0;
+    top: 25px;
+    display: flex;
+    width: 500px;
+    height: 500px;
+    animation: spin 5s linear infinite;
+
+    .icon {
+      position: absolute;
+      width: 40px;
+      transition: all 0.5s ease-in-out;
+    }
+
+    .nodejs {
+      transform: rotate(30deg);
+    }
+
+    .css {
+      transform: rotate(-215deg);
+    }
+
+    .html {
+      transform: rotate(215deg);
+    }
+
+    .js {
+      transform: rotate(-270deg);
+    }
+  }
+
+  @keyframes spin {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  .myImageContainer {
+    position: absolute;
+    left: 25px;
+    top: 50px;
+    display: flex;
+    flex-direction: column;
+    width: 450px;
+    height: 450px;
+    border-radius: 100%;
+    overflow: hidden;
+    background-image: linear-gradient(
+      90deg,
+      $primaryColor3 0%,
+      $secondaryColor3 100%
+    );
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+      rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+      rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+
+    .myImage {
+      margin: auto;
+      margin-right: -10px;
+    }
+
+    .backDecor {
+      margin: auto;
+      margin-bottom: 0;
+      width: 450px;
+      height: 450px;
+      border-radius: 100%;
+      background-image: linear-gradient(
+        90deg,
+        $primaryColor3 0%,
+        $secondaryColor3 100%
+      );
+      box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+        rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+        rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    }
+
+    .contacts {
+      display: flex;
+      margin-top: 50px;
+
+      .contactIcons {
+        font-size: 30px;
+        margin: auto 5px;
+        z-index: 5;
+        transition: all 0.5s ease;
+
+        &:hover {
+          margin: auto 20px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+/* Tablet */
+@media (max-width: 1200px) {
+  .myGalleryType2 {
+    .icons {
+      position: static;
+      margin: auto;
+      margin-top: -470px;
+    }
+
+    .myImageContainer {
+      position: static;
+      margin: auto;
+      margin-top: 50px;
+
+      .backDecor {
+        margin-top: -60px;
+      }
+    }
+  }
+}

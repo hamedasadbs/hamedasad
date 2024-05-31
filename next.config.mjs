@@ -6,6 +6,9 @@ export default (phase, { defaultConfig }) => {
    */
   const nextConfig = {
     /* config options here */
+    images: {
+      domains: ["img.freepik.com"],
+    },
   };
   return nextConfig;
 };

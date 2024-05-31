@@ -2,70 +2,42 @@
 import Image from "next/image";
 import { useContext, useEffect } from "react";
 import { toast } from "react-hot-toast";
+import { Context } from "../../middleware/library/context";
 /*style*/
 import styles from "./index.module.scss";
+/*child component*/
+import About from "./about/index";
 
-import { Context } from "../../middleware/library/context";
-
-export default function About() {
+export default function AboutPage() {
   const theme = useContext(Context).theme[0];
 
-  const myImage = require("../../public/hamed.jpg");
-  const developer1 = require("../../public/developer1.png");
-  const developer2 = require("../../public/developer2.png");
-  const developer3 = require("../../public/developer3.png");
-  const developer4 = require("../../public/developer4.png");
+  const myData = require("../../middleware/data/about.json");
+
+  const footerImages = [
+    "https://img.freepik.com/free-photo/programming-background-with-html_23-2150038863.jpg?t=st=1717175072~exp=1717178672~hmac=8ec5de10ff51b2f30c69550cecfbcf805347edfeaf1a47ac4002d681464338f3&w=996",
+    "https://img.freepik.com/free-photo/professional-programmer-working-late-dark-office_1098-18705.jpg?t=st=1717175029~exp=1717178629~hmac=6aa995726c2d180faa92300987bb78b8285e377de15ec2500f8f196ab67c5076&w=996",
+    "https://img.freepik.com/free-photo/html-css-collage-concept-with-person_23-2150062008.jpg?t=st=1717175003~exp=1717178603~hmac=24bc40805a3849203846db0352fce866974a62900232693ffd72a94b33f16966&w=996",
+    "https://img.freepik.com/free-photo/coding-man_1098-18084.jpg?t=st=1717174845~exp=1717178445~hmac=7139342d1bd32b4f3d8225ae3b2f324d465c3b5af8aa3ec327f2949ecfbfed2f&w=996",
+    "https://img.freepik.com/free-photo/rear-view-programmer-working-all-night-long_1098-18697.jpg?t=st=1717174480~exp=1717178080~hmac=6829d40d089fefe761d725b2d22248ae653217565421731f3f5a04757d9a8f5b&w=996",
+  ];
 
   return (
     <article className={styles.aboutPage}>
-      <section>
-        <h1 className={theme == "light" ? "text-sky-900" : "text-sky-500"}>
-          حامد اسداللهی
-        </h1>
-        <h4 className={theme == "light" ? "text-slate-900" : "text-slate-50"}>
-          برنامه نویس فرانت اند تحت فریمورک های React.js و Next.js و
-          React-Native
-        </h4>
-        <p className={theme == "light" ? "text-slate-900" : "text-slate-50"}>
-          من حدود 3 ساله که برنامه نویس فرانت اند هستم و تجربه کار با انواع
-          فریمورک های فرانت اند رو دارم. همچنین قادرم برای موبایل هم اپلیکیشن
-          بسازم و در کمترین زمان ممکن پروژه های خودمو ارائه بدم.
-        </p>
-        <div className={styles.buttons}>
-          <button
-            onClick={() => toast.error("در حال برسی")}
-            className={styles.hire}
-          >
-            استخدام
-          </button>
-          <button className={styles.resume}>دانلود رزومه</button>
-        </div>
-      </section>
-      <div className={styles.myImageContainer}>
-        <Image
-          className={styles.developer1}
-          src={developer1}
-          alt="front-end developer1"
-          priority
-        />
-        <Image
-          className={styles.developer2}
-          src={developer2}
-          alt="front-end developer2"
-          priority
-        />
-        <Image
-          className={styles.developer3}
-          src={developer3}
-          alt="front-end developer3"
-          priority
-        />
-        <Image
-          className={styles.developer4}
-          src={developer4}
-          alt="front-end developer4"
-          priority
-        />
+      {myData.map((data, index) => (
+        <About key={index} data={data} />
+      ))}
+      <div className={styles.footer}>
+        {footerImages.map((imageSrc, index) => (
+          <Image
+            key={index}
+            width={300}
+            height={300}
+            className={styles.footerImage}
+            src={imageSrc}
+            alt="front-end developer1"
+            priority
+          />
+        ))}
       </div>
     </article>
   );
