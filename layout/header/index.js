@@ -1,10 +1,9 @@
-"use client";
 /*style*/
 import styles from "./index.module.scss";
 /*inner component*/
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/router";
+import { useRouter, usePathname } from "next/navigation";
 import { useContext, useState } from "react";
 /*context*/
 import { Context } from "../../middleware/library/context";
@@ -19,7 +18,7 @@ export default function Header() {
   /*variable*/
   const logo = require("../../assets/mainLogo.svg");
   const logoDarkMode = require("../../assets/mainLogo-darkMode.svg");
-  const router = useRouter();
+  const path = usePathname();
   /*state*/
   const [theme, setTheme] = useContext(Context).theme;
   const [delayTheme, setDelayTheme] = useState(theme);
@@ -83,13 +82,15 @@ export default function Header() {
           >
             رزومه
           </Link>
-          <div
-            className={
-              styles.decoration +
-              " " +
-              (theme == "dark" ? "bg-slate-900" : "bg-white")
-            }
-          ></div>
+          {path !== "/resume" && (
+            <div
+              className={
+                styles.decoration +
+                " " +
+                (theme == "dark" ? "bg-slate-900" : "bg-white")
+              }
+            ></div>
+          )}
         </span>
         <span className={styles.nav}>
           <Link
@@ -98,13 +99,15 @@ export default function Header() {
           >
             پروژه ها
           </Link>
-          <div
-            className={
-              styles.decoration +
-              " " +
-              (theme == "dark" ? "bg-slate-900" : "bg-white")
-            }
-          ></div>
+          {path !== "/projects" && (
+            <div
+              className={
+                styles.decoration +
+                " " +
+                (theme == "dark" ? "bg-slate-900" : "bg-white")
+              }
+            ></div>
+          )}
         </span>
         <span className={styles.nav}>
           <Link
@@ -113,48 +116,52 @@ export default function Header() {
           >
             بلاگ
           </Link>
-          <div
-            className={
-              styles.decoration +
-              " " +
-              (theme == "dark" ? "bg-slate-900" : "bg-white")
-            }
-          ></div>
+          {path !== "/blog" && (
+            <div
+              className={
+                styles.decoration +
+                " " +
+                (theme == "dark" ? "bg-slate-900" : "bg-white")
+              }
+            ></div>
+          )}
         </span>
         <span className={styles.nav}>
           <Link
             className={theme == "light" ? "text-sky-950" : "text-white"}
             href="/about"
           >
-            {router.pathname == "/about" && (
-              <InfoIcon style={{ marginLeft: 5 }} />
-            )}
+            <InfoIcon className={styles.navIcon} />
             درباره من
           </Link>
-          <div
-            className={
-              styles.decoration +
-              " " +
-              (theme == "dark" ? "bg-slate-900" : "bg-white")
-            }
-          ></div>
+          {path !== "/about" && (
+            <div
+              className={
+                styles.decoration +
+                " " +
+                (theme == "dark" ? "bg-slate-900" : "bg-white")
+              }
+            ></div>
+          )}
         </span>
         <span className={styles.nav}>
           <Link
             className={theme == "light" ? "text-sky-950" : "text-white"}
             href="/"
           >
-            {router.pathname == "/" && <HomeIcon style={{ marginLeft: 5 }} />}
+            <HomeIcon className={styles.navIcon} />
             خانه
           </Link>
 
-          <div
-            className={
-              styles.decoration +
-              " " +
-              (theme == "dark" ? "bg-slate-900" : "bg-white")
-            }
-          ></div>
+          {path !== "/" && (
+            <div
+              className={
+                styles.decoration +
+                " " +
+                (theme == "dark" ? "bg-slate-900" : "bg-white")
+              }
+            ></div>
+          )}
         </span>
       </nav>
       <button className={styles.menu}>

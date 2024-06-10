@@ -1,25 +1,20 @@
 "use client";
 
 /*inner component*/
-import { useState } from "react";
-import "./globals.scss";
-import "./index.css";
+import { useContext } from "react";
+import { Context } from "../../../middleware/library/context.js";
 /*style*/
-import styles from "./index.module.scss";
+import styles from "../index.module.scss";
 /*component*/
-import Header from "../layout/header/index.js";
-import AboutPage from "./aboutPage/index.js";
-/*context*/
-import { Context } from "../middleware/library/context.js";
+import Header from "../../../layout/header/index.js";
+import AboutPage from "../../../page/aboutPage/index.js";
+import "../index.css";
 
-export default function Home() {
-  const [theme, setTheme] = useState("light");
-  const context = {
-    theme: [theme, setTheme],
-  };
+export default function About() {
+  const theme = useContext(Context).theme[0];
 
   return (
-    <Context.Provider value={context}>
+    <>
       <main
         className={
           styles.main + " " + (theme == "light" ? "bg-white" : "bg-slate-900")
@@ -39,6 +34,6 @@ export default function Home() {
         <div className={styles.shape}></div>
         <div className={styles.shape}></div>
       </div>
-    </Context.Provider>
+    </>
   );
 }

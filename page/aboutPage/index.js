@@ -1,16 +1,11 @@
 /*inner component*/
 import Image from "next/image";
-import { useContext, useEffect } from "react";
-import { toast } from "react-hot-toast";
-import { Context } from "../../middleware/library/context";
 /*style*/
 import styles from "./index.module.scss";
 /*child component*/
 import About from "./about/index";
 
 export default function AboutPage() {
-  const theme = useContext(Context).theme[0];
-
   const myData = require("../../middleware/data/about.json");
 
   const footerImages = [

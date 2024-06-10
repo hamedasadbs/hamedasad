@@ -1,4 +1,4 @@
-@import "../../pages/globals.scss";
+@import "../../src/app/globals.scss";
 
 .header {
   display: flex;
@@ -78,13 +78,14 @@
 
       .decoration {
         width: 100%;
-        height: 10px;
+        height: 5px;
         margin-top: -5px;
         position: relative;
         transition: all 0.5s ease-in-out;
       }
 
       a {
+        margin: auto;
         list-style: none;
         text-decoration: none;
         font-family: $mainFont;
@@ -92,6 +93,11 @@
         padding-bottom: 5px;
         border-bottom: 2px solid $secondaryColor3;
         font-size: clamp(1rem, 1vw, 1.8rem);
+
+        .navIcon {
+          margin: auto;
+          margin-left: 5px;
+        }
       }
     }
   }

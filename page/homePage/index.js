@@ -1,5 +1,5 @@
 /*inner component*/
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { toast } from "react-hot-toast";
 import { Context } from "../../middleware/library/context";
 /*style*/

@@ -9,8 +9,6 @@ import styles from "./index.module.scss";
 export default function About({ data }) {
   const theme = useContext(Context).theme[0];
 
-  const developer1 = require("../../../public/developer1.png");
-
   return (
     <section
       className={styles.about}
