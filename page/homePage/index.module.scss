@@ -48,7 +48,7 @@
 
     h4 {
       font-size: clamp(1.2rem, 1.5vw, 4rem);
-      font-family: $paragraphFont;
+      font-family: $subTitleFont;
       text-align: right;
       width: 100%;
       margin-top: 10px;
@@ -68,7 +68,7 @@
       margin-top: 100px;
 
       button {
-        font-family: $mainFont;
+        font-family: $subTitleFont;
         font-size: clamp(0.7rem, 1vw, 4rem);
         border-radius: 50px;
         margin: auto;
