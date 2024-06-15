@@ -3,7 +3,7 @@ import styles from "./index.module.scss";
 /*inner component*/
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter, usePathname } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { useContext, useState } from "react";
 /*context*/
 import { Context } from "../../middleware/library/context";
@@ -16,8 +16,8 @@ import InfoIcon from "@mui/icons-material/Info";
 
 export default function Header() {
   /*variable*/
-  const logo = require("../../assets/mainLogo.svg");
-  const logoDarkMode = require("../../assets/mainLogo-darkMode.svg");
+  const logo = require("../../assets/image/logo/mainLogo.svg");
+  const logoDarkMode = require("../../assets/image/logo/mainLogo-darkMode.svg");
   const path = usePathname();
   /*state*/
   const [theme, setTheme] = useContext(Context).theme;

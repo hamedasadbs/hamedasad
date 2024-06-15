@@ -31,7 +31,7 @@ export default function MyGallery(props) {
         <aside className={styles.myGalleryType1}>
           <Image
             className={styles.myImage}
-            src={require("../../public/hamed2.png")}
+            src={require("../../assets/image/hamed/hamed2.png")}
             alt="Hamed Asadollahi"
           />
         </aside>
@@ -40,7 +40,7 @@ export default function MyGallery(props) {
           <div className={styles.myImageContainer}>
             <Image
               className={styles.myImage}
-              src="/hamed.png"
+              src={require("../../assets/image/hamed/hamed.png")}
               alt="Hamed Asadollahi"
               width={700}
               height={700}
@@ -57,7 +57,7 @@ export default function MyGallery(props) {
                 " " +
                 styles.icon
               }
-              src={require("../../public/icon/javascript.svg")}
+              src={require("../../assets/image/icon/javascript.svg")}
               alt="javascript"
             />
             <Image
@@ -70,7 +70,7 @@ export default function MyGallery(props) {
                 " " +
                 styles.icon
               }
-              src={require("../../public/icon/css.svg")}
+              src={require("../../assets/image/icon/css.svg")}
               alt="css"
             />
             <Image
@@ -83,7 +83,7 @@ export default function MyGallery(props) {
                 " " +
                 styles.icon
               }
-              src={require("../../public/icon/html.svg")}
+              src={require("../../assets/image/icon/html.svg")}
               alt="html"
             />
             <Image
@@ -94,7 +94,7 @@ export default function MyGallery(props) {
                 " " +
                 styles.icon
               }
-              src={require("../../public/icon/tailwind.svg")}
+              src={require("../../assets/image/icon/tailwind.svg")}
               alt="tailwind"
             />
             <Image
@@ -105,7 +105,7 @@ export default function MyGallery(props) {
                 " " +
                 styles.icon
               }
-              src={require("../../public/icon/react.svg")}
+              src={require("../../assets/image/icon/react.svg")}
               alt="react"
             />
             <Image
@@ -118,7 +118,7 @@ export default function MyGallery(props) {
                 " " +
                 styles.icon
               }
-              src={require("../../public/icon/nodejs.svg")}
+              src={require("../../assets/image/icon/nodejs.svg")}
               alt="nodejs"
             />
           </div>
