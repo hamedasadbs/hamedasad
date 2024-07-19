@@ -19,7 +19,7 @@ export default function Home() {
       <section>
         <span>
           <h1 className={theme == "light" ? "text-sky-900" : "text-sky-500"}>
-            حامد اسداللهی
+            حامد اسداللهی اصل اردبیلی
           </h1>
           <div className={styles.contacts}>
             <a target="-blank" href="https://www.instagram.com/hamedasadbs/">
