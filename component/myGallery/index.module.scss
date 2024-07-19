@@ -137,6 +137,8 @@
 /* Tablet */
 @media (max-width: 1200px) {
   .myGalleryType2 {
+    margin: auto;
+    margin-top: 50px;
     .icons {
       position: static;
       margin: auto;
@@ -151,6 +153,21 @@
       .backDecor {
         margin-top: -60px;
       }
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .myGalleryType2 {
+    .icons {
+      width: 300px;
+      height: 300px;
+      display: none;
+    }
+
+    .myImageContainer {
+      width: 300px;
+      height: 300px;
     }
   }
 }

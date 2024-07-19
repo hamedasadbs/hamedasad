@@ -10,11 +10,8 @@ export default function About({ data }) {
   const theme = useContext(Context).theme[0];
 
   return (
-    <section
-      className={styles.about}
-      style={{ flexDirection: data.id % 2 == 0 ? "row" : "row-reverse" }}
-    >
-      <aside>
+    <section className={styles.about}>
+      <aside className={styles.titleContainer}>
         <h1 className={theme == "light" ? "text-sky-900" : "text-sky-500"}>
           {data.title}
         </h1>
@@ -25,12 +22,14 @@ export default function About({ data }) {
           {data.text}
         </p>
       </aside>
-      <Image
-        className={styles.image}
-        src={require(`../../../public/about/${data.name}.png`)}
-        alt="front-end developer1"
-        priority
-      />
+      <aside className={styles.imageContainer}>
+        <Image
+          className={styles.image}
+          src={require(`../../../assets/image/about/${data.name}.png`)}
+          alt="front-end developer1"
+          priority
+        />
+      </aside>
     </section>
   );
 }

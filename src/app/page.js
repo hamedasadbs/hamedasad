@@ -14,37 +14,43 @@ export default function Home() {
   const theme = useContext(Context).theme[0];
 
   return (
-    <>
-      <main
-        className={
-          styles.main + " " + (theme == "light" ? "bg-white" : "bg-slate-900")
-        }
-      >
-        <Header />
-        <HomePage />
-      </main>
-      <div
-        className={
-          styles.designLeft +
-          " " +
-          (theme == "light" ? "bg-white" : "bg-slate-900")
-        }
-      >
-        <div className={styles.shape}></div>
-        <div className={styles.shape}></div>
-        <div className={styles.shape}></div>
-      </div>
-      <div
-        className={
-          styles.designBottom +
-          " " +
-          (theme == "light" ? "bg-white" : "bg-slate-900")
-        }
-      >
-        <div className={styles.shape}></div>
-        <div className={styles.shape}></div>
-        <div className={styles.shape}></div>
-      </div>
-    </>
+    <html>
+      <head>
+        <title>خانه</title>
+        <meta name="theme-color" content="#082f49" />
+      </head>
+      <body>
+        <main
+          className={
+            styles.main + " " + (theme == "light" ? "bg-white" : "bg-slate-900")
+          }
+        >
+          <Header />
+          <HomePage />
+        </main>
+        <div
+          className={
+            styles.designLeft +
+            " " +
+            (theme == "light" ? "bg-white" : "bg-slate-900")
+          }
+        >
+          <div className={styles.shape}></div>
+          <div className={styles.shape}></div>
+          <div className={styles.shape}></div>
+        </div>
+        <div
+          className={
+            styles.designBottom +
+            " " +
+            (theme == "light" ? "bg-white" : "bg-slate-900")
+          }
+        >
+          <div className={styles.shape}></div>
+          <div className={styles.shape}></div>
+          <div className={styles.shape}></div>
+        </div>
+      </body>
+    </html>
   );
 }

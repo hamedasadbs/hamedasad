@@ -39,22 +39,28 @@
 }
 
 /* Tablet */
-@media (max-width: 900px) {
+@media (max-width: 1200px) {
   .aboutPage {
     .footer {
-      width: 30%;
+      .footerImage {
+        width: 200px;
+        height: 250px;
+      }
     }
   }
 }
 
 /* Mobile */
-@media (max-width: 600px) {
+@media (max-width: 700px) {
   .aboutPage {
     flex-direction: column;
     margin-top: 50px;
 
     .footer {
-      width: 100%;
+      .footerImage {
+        width: 150px;
+        height: 200px;
+      }
     }
   }
 }

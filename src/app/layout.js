@@ -13,12 +13,5 @@ export default function Layout({ children }) {
   };
 
   /*JSX*/
-  return (
-    <Context.Provider value={context}>
-      <html>
-        <head></head>
-        <body>{children}</body>
-      </html>
-    </Context.Provider>
-  );
+  return <Context.Provider value={context}>{children}</Context.Provider>;
 }
