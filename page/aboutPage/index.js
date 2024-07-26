@@ -1,12 +1,23 @@
 /*inner component*/
 import Image from "next/image";
+import axios from "axios";
+import { useState, useEffect } from "react";
 /*style*/
 import styles from "./index.module.scss";
 /*child component*/
 import About from "./about/index";
 
 export default function AboutPage() {
-  const myData = require("../../middleware/data/about.json");
+  const [myData, setMyData] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get(`http://localhost:8080/about`)
+      .then((res) => setMyData(res.data.about))
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
 
   const footerImages = [
     "https://img.freepik.com/free-photo/programming-background-with-html_23-2150038863.jpg?t=st=1717175072~exp=1717178672~hmac=8ec5de10ff51b2f30c69550cecfbcf805347edfeaf1a47ac4002d681464338f3&w=996",
