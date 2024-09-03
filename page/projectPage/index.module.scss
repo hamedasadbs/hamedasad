@@ -1,0 +1,26 @@
+@import "../../src/app/globals.scss";
+
+.projectPage {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  margin-top: 100px;
+
+  @keyframes comeIn {
+    0% {
+      left: 500px;
+    }
+    100% {
+      left: 0;
+    }
+  }
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  .projectPage {
+    flex-direction: column;
+    margin-top: 50px;
+  }
+}

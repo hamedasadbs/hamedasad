@@ -13,6 +13,7 @@ import Brightness3Icon from "@mui/icons-material/Brightness3";
 import MenuIcon from "@mui/icons-material/Menu";
 import HomeIcon from "@mui/icons-material/Home";
 import InfoIcon from "@mui/icons-material/Info";
+import DeveloperModeIcon from "@mui/icons-material/DeveloperMode";
 
 export default function Header() {
   /*variable*/
@@ -95,11 +96,12 @@ export default function Header() {
         <span className={styles.nav}>
           <Link
             className={theme == "light" ? "text-sky-950" : "text-white"}
-            href="/"
+            href="/project"
           >
+            <DeveloperModeIcon className={styles.navIcon} />
             پروژه ها
           </Link>
-          {path !== "/projects" && (
+          {path !== "/project" && (
             <div
               className={
                 styles.decoration +

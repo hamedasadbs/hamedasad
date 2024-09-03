@@ -45,6 +45,7 @@ var cors = require("cors");
 const bodyParser = require("body-parser");
 
 var about = require("./about");
+var project = require("./project");
 
 //use cors lib for disable cors error
 app.use(
@@ -70,6 +71,7 @@ con.connect((err) => {
 });
 
 about.getAbout(app, con);
+project.getProject(app, con);
 
 //setting port
 app.listen(8080);

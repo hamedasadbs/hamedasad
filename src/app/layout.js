@@ -8,6 +8,7 @@ import "./index.css";
 
 export default function Layout({ children }) {
   const [theme, setTheme] = useState("light");
+
   const context = {
     theme: [theme, setTheme],
   };
